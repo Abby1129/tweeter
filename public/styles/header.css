@@ -1,0 +1,12 @@
+#header-profile {
+  margin: 5em 0 0;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #f9d1d1;
+  background-color: #6a7d00;
+  background-image: url("https://www.transparenttextures.com/patterns/fake-luxury.png");
+}
