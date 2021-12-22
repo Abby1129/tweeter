@@ -30,14 +30,6 @@ const data = [
 ];
 
 $(document).ready(function () {
-  const renderTweets = function (tweets) {
-    const $tweetContainer = $(".tweet-container");
-
-    for (const tweet of tweets) {
-      $tweetContainer.append(createTweetElement(tweet));
-    }
-  };
-
   const createTweetElement = function (tweetData) {
     const $tweet = $(`
     <section id="tweet-container">
@@ -52,7 +44,7 @@ $(document).ready(function () {
     </div>
     </header>
     <div class="tweet-content"> 
-    <p>${tweetData.content.text}.</p> </div>
+    <p>${tweetData.content.text}</p> </div>
     <footer>
     <h3>${tweetData.created_at}</h3>
     <div class="footer-icons">
@@ -67,5 +59,20 @@ $(document).ready(function () {
     return $tweet;
   };
 
+  const renderTweets = function (tweets) {
+    const $tweetContainer = $(".tweet-container");
+
+    for (const tweet of tweets) {
+      $tweetContainer.append(createTweetElement(tweet));
+    }
+  };
+
   renderTweets(data);
+
+  $(".form-new-tweet").on("submit", function (event) {
+    event.preventDefault();
+    console.log(event)
+
+    $.post("/tweets/", $(this).serialize())
+  });
 });
