@@ -29,22 +29,13 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
-    <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-
-    <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
-    <!-- Display CSS -->
     <link rel="stylesheet" href="/styles/display.css" />
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav id="navbar-nav" class="navbar-fixed-top">
       <div class="navbar-header-container">
         <span class="navbar-header">tweeter</span>
@@ -55,10 +46,6 @@
           <i class="fas fa-angle-double-down"></i>
         </h5>
       </div>
-
-      <!-- <button type="button" class="write-tweet-button">
-        Write a new tweet
-      </button> -->
     </nav>
 
     <header id="header-profile">
@@ -72,8 +59,8 @@
     </header>
 
     <main class="main-container">
+      <!-- Tweet Form -->
       <section id="section-new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form method="Post" action="/tweets/" class="form-new-tweet">
           <label for="tweet-text" class="tweet-text"
             >What are you humming about?</label
@@ -85,43 +72,11 @@
           </div>
         </form>
       </section>
-
-      <section>
-        <article>
-          <header>
-            <div class="tweet-img-name">
-              <img src="/images/cartoon-headshot-1.jpg" />
-              <h1>Newton</h1>
-            </div>
-            <div class="tweet-username">
-              <h2>@sirIsaac</h2>
-            </div>
-          </header>
-          <div class="tweet-content">
-            <p>
-              If I have seen further it is by standing on the shoulders of
-              giants.
-            </p>
-          </div>
-          <footer>
-            <h3>10 days ago</h3>
-            <div class="footer-icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      </section>
+      <!-- End Tweet Form -->
     </main>
 
-    <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
-    <!-- Char Counter JS -->
     <script
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
