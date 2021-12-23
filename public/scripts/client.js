@@ -30,11 +30,11 @@ const data = [
 ];
 
 $(document).ready(function () {
+  // CREATE NEW TWEET ELEMENT
   const createTweetElement = function (tweetData) {
     const $tweet = $(`
-    <section id="tweet-container">
     <article>
-    <header>
+      <header>
     <div class="tweet-img-name">
     <img src ="${tweetData.user.avatars}"/>
     <h1>${tweetData.user.name}</h1>
@@ -43,8 +43,11 @@ $(document).ready(function () {
     <h2>${tweetData.user.handle}</h2>
     </div>
     </header>
+
     <div class="tweet-content"> 
-    <p>${tweetData.content.text}</p> </div>
+    <p>${tweetData.content.text}</p> 
+    </div>
+
     <footer>
     <h3>${tweetData.created_at}</h3>
     <div class="footer-icons">
@@ -54,16 +57,16 @@ $(document).ready(function () {
     </div>
     </footer>
     </article>
-    </section>
     `);
     return $tweet;
   };
 
+  // RENDER TWEET
   const renderTweets = function (tweets) {
-    const $tweetContainer = $(".tweet-container");
+    const $tweetWrapper = $("#tweet-wrapper");
 
     for (const tweet of tweets) {
-      $tweetContainer.append(createTweetElement(tweet));
+      $tweetWrapper.append(createTweetElement(tweet));
     }
   };
 
@@ -71,8 +74,8 @@ $(document).ready(function () {
 
   $(".form-new-tweet").on("submit", function (event) {
     event.preventDefault();
-    console.log(event)
+    console.log(event);
 
-    $.post("/tweets/", $(this).serialize())
+    $.post("/tweets/", $(this).serialize());
   });
 });
