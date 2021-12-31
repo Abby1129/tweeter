@@ -1,4 +1,4 @@
-#tweet-container {
+#tweet-wrapper {
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -9,13 +9,13 @@ article {
   margin-top: 3.5em;
 }
 
-article:hover {
-  box-shadow: 5px 10px #d2c38e;
-}
-
 article header {
   display: flex;
   justify-content: space-between;
+}
+
+article:hover {
+  box-shadow: 5px 10px #d2c38e;
 }
 
 .tweet-img-name {
