@@ -8,9 +8,9 @@ $(document).ready(function () {
   // RENDER TWEET
   const renderTweets = function (tweets) {
     const $tweetWrapper = $("#tweet-wrapper");
-
+    $tweetWrapper.empty();
     for (const tweet of tweets) {
-      $tweetWrapper.append(createTweetElement(tweet));
+      $tweetWrapper.prepend(createTweetElement(tweet));
     }
   };
 
@@ -46,6 +46,7 @@ $(document).ready(function () {
 
   $(".form-new-tweet").on("submit", function (event) {
     event.preventDefault();
+    const form = this;
     const tweetContent = $(this.text).val();
     if (tweetContent.length === 0) {
       alert("Please enter a tweet");
@@ -56,6 +57,10 @@ $(document).ready(function () {
         url: "/tweets",
         method: "POST",
         data: $(this).serialize(),
+        success: function (data) {
+          $(form)[0].reset();
+          loadTweets(data);
+        },
       });
     }
   });
