@@ -46,14 +46,18 @@ $(document).ready(function () {
 
   $(".form-new-tweet").on("submit", function (event) {
     event.preventDefault();
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: $(this).serialize(),
-      success: function (data) {
-        console.log(data);
-      },
-    });
+    const tweetContent = $(this.text).val();
+    if (tweetContent.length === 0) {
+      alert("Please enter a tweet");
+    } else if (tweetContent.length > 140) {
+      alert("Tweet is too long");
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $(this).serialize(),
+      });
+    }
   });
 
   //LOAD TWEETS
