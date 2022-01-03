@@ -5,6 +5,9 @@
  */
 
 $(document).ready(function () {
+  const errorDiv = $(".error");
+  errorDiv.hide();
+
   // RENDER TWEET
   const renderTweets = function (tweets) {
     const $tweetWrapper = $("#tweet-wrapper");
@@ -45,13 +48,20 @@ $(document).ready(function () {
   };
 
   $(".form-new-tweet").on("submit", function (event) {
+    errorDiv.slideUp(80);
     event.preventDefault();
     const form = this;
     const tweetContent = $(this.text).val();
+    const errorMessage = $(".error-message i:first-child");
+
     if (tweetContent.length === 0) {
-      alert("Please enter a tweet");
+      errorMessage.html("You cannot post an empty tweet!").fadeIn(300);
+      errorDiv.slideDown("slow");
     } else if (tweetContent.length > 140) {
-      alert("Tweet is too long");
+      errorMessage
+        .html("Your tweet is more than the recommended 140 characters!")
+        .fadeIn(300);
+      errorDiv.slideDown("slow");
     } else {
       $.ajax({
         url: "/tweets",
