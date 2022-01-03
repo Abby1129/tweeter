@@ -20,20 +20,20 @@ $(document).ready(function () {
       <article>
         <header>
           <div class="tweet-img-name">
-            <img src ="${tweetData.user.avatars}"/>
-            <h1>${tweetData.user.name}</h1>
+            <img src ="${escape(tweetData.user.avatars)}"/>
+            <h1>${escape(tweetData.user.name)}</h1>
           </div>
           <div class="tweet-username">
-            <h2>${tweetData.user.handle}</h2>
+            <h2>${escape(tweetData.user.handle)}</h2>
           </div>
         </header>
 
         <div class="tweet-content">
-          <p>${tweetData.content.text}</p>
+          <p>${escape(tweetData.content.text)}</p>
         </div>
 
         <footer>
-          <h3>${timeago.format(tweetData.created_at)}</h3>
+          <h3>${timeago.format(escape(tweetData.created_at))}</h3>
           <div class="footer-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -76,4 +76,11 @@ $(document).ready(function () {
     });
   };
   loadTweets();
+
+  //XXS
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 });
