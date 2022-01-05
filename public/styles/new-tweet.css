@@ -1,14 +1,10 @@
-#section-new-tweet {
-  margin: 10px;
-}
-
-.form-new-tweet {
+.new-tweet {
   margin: 1em;
 }
 
 .tweet-text {
-  display: flex;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 #tweet-textarea {
@@ -16,7 +12,7 @@
   width: 100%;
   background-color: #f4f1ec;
   border: none;
-  border-bottom: 3px solid #9b9b9b;
+  border-bottom: solid #9b9b9b;
   margin-bottom: 0.75em;
 }
 
@@ -29,9 +25,8 @@
 .tweet-button {
   background-color: #4056a1;
   color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
   font-family: "Bungee", sans-serif;
+  border: none;
 }
 
 .tweet-button:hover {
@@ -39,6 +34,7 @@
 }
 
 .counter {
+  float: right;
   font-family: "Bungee", sans-serif;
 }
 
@@ -52,4 +48,10 @@
 
 .fa-exclamation-triangle {
   color: red;
+}
+
+@media screen and (max-width: 1023px) {
+  .new-tweet {
+    margin-top: 2em;
+  }
 }

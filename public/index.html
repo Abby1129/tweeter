@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/display.css" />
+    <link rel="stylesheet" href="/styles/tweet.css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,7 +52,7 @@
   </head>
 
   <body>
-    <nav id="navbar-nav" class="navbar-fixed-top">
+    <nav id="navbar-nav">
       <div class="navbar-header-container">
         <span class="navbar-header">tweeter</span>
       </div>
@@ -70,17 +70,17 @@
       </div>
       <br />
       <div>
-        <h2>Amy Mansell</h2>
+        <h2 class="user-name">Abby Ef</h2>
       </div>
     </header>
 
-    <main class="main-container">
+    <main class="container">
       <!-- Tweet Form -->
-      <section id="section-new-tweet">
-        <form method="Post" action="/tweets/" class="form-new-tweet">
+      <section>
+        <form method="Post" action="/tweets/" class="new-tweet">
           <label for="tweet-text" class="tweet-text"
-            >What are you humming about?</label
-          >
+            >What are you humming about?
+          </label>
           <div class="error">
             <span class="error-message">
               <i class="fas fa-exclamation-triangle"></i>
