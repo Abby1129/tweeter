@@ -10,6 +10,7 @@ This repository is the starter code for the project: Students will fork and clon
 !["Screenshot of Empty Tweet Error"](docs/empty-tweet.png)
 !["Screenshot of Tweet too long"](docs/tweet-tooLong.png)
 !["Screenshot of Passed Tweet post"](docs/add-tweet.png)
+!["Screenshot of Responsive Design"](docs/tweeter-responsive.png)
 
 ## Getting Started
 
