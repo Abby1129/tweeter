@@ -26,7 +26,8 @@
   background-color: #4056a1;
   color: #fff;
   font-family: "Bungee", sans-serif;
-  border: none;
+  padding: 8px;
+  margin: 5px;
 }
 
 .tweet-button:hover {
