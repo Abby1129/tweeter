@@ -70,6 +70,8 @@ $(document).ready(function () {
         success: function (data) {
           $(form)[0].reset();
           loadTweets(data);
+          //reset counter to 140
+          $(".counter").text(140);
         },
       });
     }
